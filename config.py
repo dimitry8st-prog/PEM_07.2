@@ -12,7 +12,7 @@ def detect_provider() -> ProviderName:
     gigachat_key = os.getenv("GIGACHAT_API_KEY", "").strip()
 
     if openai_key and gigachat_key:
-        return "openai"
+        return "gigachat"
 
     if openai_key:
         return "openai"

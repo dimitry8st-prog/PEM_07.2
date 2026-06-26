@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Генератор</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Генератор</h1>
+            <p class="subtitle">Текстовый чат или мультимодальная генерация изображений</p>
+        </header>
+
+        <form id="generate-form">
+            <label for="mode">Режим</label>
+            <select id="mode" name="mode">
+                <option value="image">Изображение (GigaChat + ProxyAPI)</option>
+                <option value="chat">Чат (OpenAI / GigaChat)</option>
+            </select>
+
+            <label for="prompt">Промпт</label>
+            <textarea id="prompt" name="prompt" rows="4" placeholder="Опишите запрос..." required></textarea>
+
+            <button type="submit" id="submit-btn">Отправить</button>
+        </form>
+
+        <section id="progress-section" class="hidden">
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            <p id="progress-message">Ожидание...</p>
+        </section>
+
+        <section id="result-section" class="hidden">
+            <h2>Результат</h2>
+            <div id="result-content"></div>
+            <button type="button" id="new-request-btn" class="secondary">Новый запрос</button>
+        </section>
+
+        <section id="error-section" class="hidden error">
+            <p id="error-message"></p>
+            <button type="button" id="retry-btn" class="secondary">Попробовать снова</button>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

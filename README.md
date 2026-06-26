@@ -6,22 +6,36 @@
 
 ```
 .
+├── app.py            # Flask веб-интерфейс
 ├── main.py           # Точка входа CLI
+├── pipeline.py       # Мультимодальный пайплайн
 ├── config.py         # Определение активного провайдера
-├── providers.py      # Реализация OpenAI и GigaChat
-├── requirements.txt  # Зависимости
-├── .env.example      # Шаблон переменных окружения
-├── .gitignore
-├── README.md
-└── venv/             # Виртуальное окружение
+├── providers.py      # OpenAI, GigaChat, ProxyAPI
+├── templates/        # HTML-шаблоны
+├── static/           # CSS и JS
+├── outputs/          # Результаты генерации
+├── requirements.txt
+├── .env.example
+└── venv/
 ```
+
+## Flask веб-интерфейс
+
+```bash
+python app.py
+```
+
+Откройте в браузере: http://127.0.0.1:5000
+
+- Форма с выбором режима (чат / изображение)
+- Прогресс-бар с опросом статуса задачи
+- Отображение результата на странице
 
 ## Быстрый старт
 
 ### 1. Создание виртуального окружения
 
 **Windows (PowerShell):**
-```powershell
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 ```
@@ -57,7 +71,7 @@ cp .env.example .env
 - `OPENAI_API_KEY` — для OpenAI
 - `GIGACHAT_API_KEY` — для GigaChat (авторизационный ключ из личного кабинета Sber)
 
-Если заданы оба ключа, используется OpenAI.
+Если заданы оба ключа, используется GigaChat.
 
 ### 4. Запуск
 
