@@ -1,0 +1,7 @@
+# Укажите один из ключей (или оба — приоритет у OpenAI)
+
+OPENAI_API_KEY=sk-your-openai-api-key-here
+# OPENAI_MODEL=gpt-4o-mini
+
+GIGACHAT_API_KEY=your-gigachat-credentials-here
+# GIGACHAT_MODEL=GigaChat
